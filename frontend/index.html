@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Quickpic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- You can add your styles and scripts here -->
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/provided.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script type="module" src="src/helpers.js"></script>
+    <script type="module" src="src/api.js"></script>
+</head>
+<body>
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark w-100" style="display:none; position:fixed; top:0">
+        <div class="container-xl">
+            <a id="QuickpicLogo" class="navbar-brand" href="#">QuickPic</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarInside" aria-controls="navbarInside" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarInside">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a id="navProfile" class="nav-link" href="#">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="navUploadPost" class="nav-link" href="#">Upload Post</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="navSignOut" class="nav-link" href="#">Sign out</a>
+                    </li>
+                    
+                </ul>
+            <form>
+                <input id="search" class="form-control" type="text" placeholder="Search" onkeydown = "if (event.keyCode == 13)
+                        document.getElementById('btnSearch').click()">
+            </form>
+            <input type = "button" id = "btnSearch" style="display:none">
+            </div>
+        </div>
+    </nav>
+    <div id="main">
+        <div id="loginContainer">
+            <div class="row m-0 h-100">
+                <div class="col p-0 bg-custom d-flex justify-content-center align-items-center flex-column w-50">
+                    <h1 class="pb-3 mt-5">Quickpic</h1>
+                    <form class="w-25" action="#">
+                        <div class="mb-3">
+                            <label class="form-label">Username</label>
+                            <input id="usernameLog" type="text" class="form-control" placeholder="username"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input id="passwordLog" type="password" class="form-control" placeholder="password"
+                                required>
+                        </div>
+                        
+                        <button id="loginButton" type="button" class="btn btn-default mt-3 mb-3" style="background-color: rgb(77, 76, 76); color:white; vertical-align: middle">Login</button>
+        
+                        <div>
+                            <a href='#' id="changeToReg">Not a user? Register</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="registerContainer" style="display:none">
+            <div class="row m-0 h-100">
+                <div class="col p-0 bg-custom d-flex justify-content-center align-items-center flex-column w-50">
+                    <h1 class="pb-3 mt-5">Quickpic</h1>
+                    <form class="w-25" action="#">
+                        <div class="mb-3">
+                            <labelclass="form-label">Username</label>
+                            <input id="usernameReg" type="text" class="form-control" placeholder="username"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input id="passwordReg" type="password" class="form-control" placeholder="password"
+                                required>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label class="form-label">Confirm Password</label>
+                            <input id="confirmPasswordReg" type="password" class="form-control"placeholder="confirm password"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <labelclass="form-label">Email</label>
+                            <input id="emailReg" type="text" class="form-control" placeholder="email"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <labelclass="form-label">Name</label>
+                            <input id="nameReg" type="text" class="form-control" placeholder="name"
+                                required>
+                        </div>
+                        
+                        <button id="regButton" type="button" class="btn btn-custom btn-lg btn-block mt-3 mb-3" style="background-color: rgb(77, 76, 76); color:white">Register</button>
+        
+                        <div>
+                            <a href='#' id="backToLogin">Back to login</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal" style="display:none">
+            <div class="modal-dialog" style="z-index: 1;">
+                <div class="modal-content">
+                <div class="modal-header">
+                </div>
+                <div id='modal-body' class="modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button id="closeButton" type="button" class="btn btn-primary" >Close</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    
+            <div id="feedsContainer" style="display:none">
+                <div id="feeds" class="d-flex justify-content-center align-items-center flex-column w-100">
+                    
+                </div>
+            </div>
+            <div id="profileContainer" style="display:none">
+                <div id="profile" class="d-flex justify-content-center align-items-center flex-column w-100">
+                    
+                </div>
+            </div>
+    </div>
+    
+        <!-- app goes here --> 
+    <footer>
+        <p>&copy; Quickpic</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>

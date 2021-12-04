@@ -1,0 +1,13 @@
+- Use a simple and clear UI that allows users to navigate the website clearly.
+- Live update for likes, delete posts and comments.
+- Can search for users instead of having to follow them first to open their profile.
+- Included alt text -> (author name)'s post.
+- Pages can be zoomed to 200% (navbar links will change to dropdown).
+- Pages are compatible with 400px wide screen.
+- All text contrast with background color.
+- When mouse hover over clickable texts, the text will change color and mouse will change to pointer.
+- Only likes and comments count are shown in the post to make it look cleaner. User can click on the likes or comments text to show the full data.
+- Only following numbers is shown in the profile page. Clicking the text will show all the following usernames.
+- All modals can be closed by clicking the close button or anywhere on the screen(except the modal).
+- Users can only update or delete self post.
+- All text input have placeholder that shows what the user needs to input. 

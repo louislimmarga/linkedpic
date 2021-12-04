@@ -1,0 +1,3 @@
+- Added an option to search user with username.
+- Added dropdown navigation for smaller screen.
+- Added option to sign out.
